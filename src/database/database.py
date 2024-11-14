@@ -15,5 +15,9 @@ def config(app):
 
 def reset():
     db.drop_all()
+    print ('Base de datos borrada')
     db.create_all()
-    print("Database reset")
+    print ('Base de datos reiniciada')
+
+    
+    

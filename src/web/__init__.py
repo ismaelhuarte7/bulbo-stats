@@ -3,6 +3,7 @@ from flask_session import Session
 from src.config import config
 from src.web import routes
 from src.database import database
+from src.web import commands
 session = Session()
 
 def create_app(env="development"):
@@ -15,5 +16,8 @@ def create_app(env="development"):
     session.init_app(app)
     
     routes.register(app)
+    
+    commands.register(app)
+    
     
     return app
