@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - BulboStats
+name: Build and deploy Python app to Azure Web App - bulbostats
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: '3.8'
+          python-version: '3.12'
 
       - name: Create and start virtual environment
         run: |
@@ -65,14 +65,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D294A1DA21544005A72B64430EAF30A8 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_E6888CBEBC0C442F835FAE70A7A3398A }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C91FC924AB9F4219BE1091EDBD335380 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_45105976E8F447EE8D934AC5D230F54C }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_43822F868DF5471CAE64B6DAA0898902 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5C17E66D15EB4ADA838A015095B12C08 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'BulboStats'
+          app-name: 'bulbostats'
           slot-name: 'Production'
           
